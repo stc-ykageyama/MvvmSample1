@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:MvvmSample1.ViewModels"
+             mc:Ignorable="d"
+             x:Class="MvvmSample1.Views.MainPage"
+             Title="MVVMサンプル(PureC#)">
+
+    <!-- ViewModelの指定 -->
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel />
+    </ContentPage.BindingContext>
+    
+    <StackLayout>
+        <Label Text="MVVMサンプル(PureC#)" 
+               FontSize="Large"
+               TextColor="White"
+               BackgroundColor="DarkBlue"
+               HorizontalTextAlignment="Center" />
+        <Label Text="{Binding Number}" 
+               TextColor="Red" 
+               FontSize="Medium" 
+               HorizontalTextAlignment="Center" />
+        <Button Text="-1"
+                Command="{Binding DecrementCommand}" />
+        <Button Text="+1"
+                Command="{Binding IncrementCommand}" />
+    </StackLayout>
+
+</ContentPage>
